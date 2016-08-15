@@ -1,0 +1,26 @@
+{
+  "name": "discourse-webhook-github-issue",
+  "version": "0.1.0",
+  "description": "",
+  "engines": {
+    "node": "6.3.1"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "koa": "^2.0.0-alpha.5",
+    "koa-bodyparser": "^3.2.0",
+    "koa-router": "^7.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "node",
+    "heroku"
+  ],
+  "license": "MIT"
+}
