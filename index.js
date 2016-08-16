@@ -43,7 +43,7 @@ router.post(watchUrl, (ctx, next) => {
   const $ = cheerio.load(body.post.cooked);
   $('a').each((_, element) => {
     const url = $(element).attr('href');
-    if (url.match(githubPullRequestRegexp)) {
+    if (githubPullRequestRegexp.test(url)) {
       urlSet.add(url);
     }
   });
