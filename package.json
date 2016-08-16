@@ -10,6 +10,8 @@
     "start": "node index.js"
   },
   "dependencies": {
+    "cheerio": "^0.20.0",
+    "github": "^2.4.1",
     "koa": "^2.0.0-alpha.5",
     "koa-bodyparser": "^3.2.0",
     "koa-router": "^7.0.1"
