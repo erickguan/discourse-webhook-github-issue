@@ -34,7 +34,10 @@ router.post(watchUrl, (ctx, next) => {
   const hmac = crypto.createHmac('sha256', secret);
   const hash = `sha256=${hmac.update(rawBody).digest('hex')}`;
   if (hash !== headers['x-discourse-event-signature']) {
-    ctx.body = `HMAC mismatched. Malformed payload.\nSignature: ${headers['x-discourse-event-signature']}\nBody: ${rawBody}`;
+    ctx.body = 'HMAC mismatched. Malformed payload.';
+    ctx.body += `Signature: ${headers['x-discourse-event-signature']}`;
+    ctx.body += `Computed: ${hash}`;
+    ctx.body += `Body: ${rawBody}`;
     return next();
   }
 
