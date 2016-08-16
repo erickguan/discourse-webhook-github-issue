@@ -34,7 +34,7 @@ router.post(watchUrl, (ctx, next) => {
   const hmac = crypto.createHmac('sha256', secret);
   const hash = `sha256=${hmac.update(rawBody).digest('hex')}`;
   if (hash !== headers['x-discourse-event-signature']) {
-    ctx.body = 'HMAC mismatched. Malformed payload.';
+    ctx.body = `HMAC mismatched. Malformed payload.\nSignature: ${headers['x-discourse-event-signature']}\nBody: ${rawBody}`;
     return next();
   }
 
@@ -54,7 +54,6 @@ router.post(watchUrl, (ctx, next) => {
 
   // github setup
   const github = new GitHubApi({
-    debug: true,
     protocol: 'https',
     host: "api.github.com",
     headers: githubCustomHeaders,
