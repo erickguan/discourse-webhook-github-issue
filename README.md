@@ -1,5 +1,7 @@
 # discourse-webhook-github-issue
 
+This bot is a demo for Discourse webhooks which mades it parts of GSoC. The bot can be deployed on heroku or your server.
+
 ## Config
 
 Firstly, you'll need to set up a Github user to comment. Create an account and prove you are not a robot.
